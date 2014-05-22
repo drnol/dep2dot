@@ -1,0 +1,33 @@
+bytes.cmo :
+bytes.cmx :
+cmd_util.cmo : dex.cmo cmd_util.cmi
+cmd_util.cmx : dex.cmx cmd_util.cmi
+cmd_util.cmi : dex.cmo
+dex.cmo : util.cmo
+dex.cmx : util.cmx
+file.cmo : util.cmo log.cmo instr.cmo dex.cmo
+file.cmx : util.cmx log.cmx instr.cmx dex.cmx
+gmap.cmo : gmap.cmi
+gmap.cmx : gmap.cmi
+gmap.cmi :
+gset.cmo : gset.cmi
+gset.cmx : gset.cmi
+gset.cmi :
+instr.cmo : util.cmo log.cmo dex.cmo
+instr.cmx : util.cmx log.cmx dex.cmx
+log.cmo :
+log.cmx :
+main.cmo : write.cmo util.cmo my_insert.cmo log.cmo file.cmo
+main.cmx : write.cmx util.cmx my_insert.cmx log.cmx file.cmx
+my_insert.cmo : util.cmo touch.cmo dex.cmo cmd_util.cmi
+my_insert.cmx : util.cmx touch.cmx dex.cmx cmd_util.cmx
+offset_util.cmo : dex.cmo
+offset_util.cmx : dex.cmx
+touch.cmo : util.cmo gset.cmi dex.cmo cmd_util.cmi
+touch.cmx : util.cmx gset.cmx dex.cmx cmd_util.cmx
+util.cmo :
+util.cmx :
+write.cmo : util.cmo offset_util.cmo gset.cmi gmap.cmi dex.cmo cmd_util.cmi \
+    bytes.cmo
+write.cmx : util.cmx offset_util.cmx gset.cmx gmap.cmx dex.cmx cmd_util.cmx \
+    bytes.cmx
